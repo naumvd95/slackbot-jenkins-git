@@ -41,7 +41,7 @@ def handle_command(command, channel):
         response ="I swear ass octopus that my guys will update your jobs before sunrise! Watch the state Cap:http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/"
         subprocess.call(["curl", "http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/buildWithParameters?token=OVk4h6uqDe45NNxa3wqnZpF4"])
 
-    if command.startswith(AUTO_UPDATE_COMMAND):
+    if AUTO_UPDATE_COMMAND in command:
         response ="Take a rest Cap, I will take a command and update all jobs! Watch the state Cap:http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/"
         subprocess.call(["curl", "http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/buildWithParameters?token=OVk4h6uqDe45NNxa3wqnZpF4"])
 
