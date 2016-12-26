@@ -32,7 +32,7 @@ def handle_command(command, channel):
         are valid commands. If so, then acts on the commands. If not,
         returns back what it needs for clarification.
     """
-    response = "Go to hell with all your blankety! use *" + HELP_COMMAND + \
+    response = "Go to hell with all your blankety!  use *" + HELP_COMMAND + \
                "* command!"
     if command.startswith(HELP_COMMAND):
         response = "Thousand devils!...write some more code then I can do that!"
