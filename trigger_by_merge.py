@@ -34,7 +34,7 @@ def handle_command(command, channel):
     response = "Go to hell with all your blankety! use *" + HELP_COMMAND + \
                "* command!"
     if command.startswith(HELP_COMMAND):
-        response = "thousand devils!...write some more code then I can do that!"
+        response = "Thousand devils!...write some more code then I can do that!"
 
     if command.startswith(UPDATE_COMMAND):
         response ="I swear ass octopus that my guys will update your jobs before sunrise! Watch the state Cap:http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/"
