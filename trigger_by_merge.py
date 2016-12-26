@@ -1,5 +1,6 @@
 import os
 import time
+import subprocess
 from slackclient import SlackClient
 
 # instantiate Slack & Twilio clients
@@ -21,7 +22,8 @@ if __name__ == "__main__":
         print("could not find bot user with the name " + BOT_NAME)
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
-EXAMPLE_COMMAND = "do"
+UPDATE_COMMAND = "update"
+EXAMPLE_COMMAND = "help"
 
 def handle_command(command, channel):
     """
@@ -30,9 +32,13 @@ def handle_command(command, channel):
         returns back what it needs for clarification.
     """
     response = "Not sure what you mean. Use the *" + EXAMPLE_COMMAND + \
-               "* command with numbers, delimited by spaces."
+               "* command"
     if command.startswith(EXAMPLE_COMMAND):
-        response = "Sure...write some more code then I can do that!"
+        response = "thousand devils!...write some more code then I can do that!"
+
+    if command.startswith(UPDATE_COMMAND):
+        response = "Yeah...my sailors tried their best and will update all jobs, you need Cap!"
+        subprocess.call(["curl", "http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/buildWithParameters?token=OVk4h6uqDe45NNxa3wqnZpF4"])
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
 
