@@ -23,7 +23,7 @@ if __name__ == "__main__":
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
 UPDATE_COMMAND = "update"
-AUTO_UPDATE_COMMAND = "@jenkins_trigger_bot update"
+AUTO_UPDATE_COMMAND = "update"
 HELP_COMMAND = "help"
 
 def handle_command(command, channel):
@@ -42,7 +42,7 @@ def handle_command(command, channel):
         subprocess.call(["curl", "http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/buildWithParameters?token=OVk4h6uqDe45NNxa3wqnZpF4"])
 
     if AUTO_UPDATE_COMMAND in command:
-        response ="Take a rest Cap, I will take a command and update all jobs! Watch the state:http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/"
+        response ="Take a rest Cap, I will take a command and update all jobs! Watch the state :http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/"
         subprocess.call(["curl", "http://jenkins-tpi.bud.mirantis.net:8080/view/utils/job/update_jobs/buildWithParameters?token=OVk4h6uqDe45NNxa3wqnZpF4"])
 
     slack_client.api_call("chat.postMessage", channel=channel,
