@@ -58,10 +58,17 @@ def parse_slack_output(slack_rtm_output):
     output_list = slack_rtm_output
     if output_list and len(output_list) > 0:
         for output in output_list:
-            if output and 'text' in output and AT_BOT in output['text']:
-                # return text after the @ mention, whitespace removed
+            if output.get('attachments', None):
+                attach_value = output['attachments'][0]['text']
+                if 'trigger_update' in temp:
+                    return attach_value.lower(), \
+                           output['channel']
+            else:
+                if output and 'text' in output and AT_BOT in output['text']:
+                    # return text after the @ mention, whitespace removed
                 return output['text'].split(AT_BOT)[1].strip().lower(), \
                        output['channel']
+
     return None, None
 
 
