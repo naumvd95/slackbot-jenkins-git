@@ -23,7 +23,7 @@ if __name__ == "__main__":
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
 UPDATE_COMMAND = "update"
-AUTO_UPDATE_COMMAND = "update"
+AUTO_UPDATE_COMMAND = "trigger_update"
 HELP_COMMAND = "help"
 
 def handle_command(command, channel):
@@ -54,6 +54,8 @@ def parse_slack_output(slack_rtm_output):
         The Slack Real Time Messaging API is an events firehose.
         this parsing function returns None unless a message is
         directed at the Bot, based on its ID.
+        If you receive message formatted as attachment (most of webhooks),
+        this method can catch key-word from attachment-text
     """
     output_list = slack_rtm_output
     if output_list and len(output_list) > 0:
