@@ -16,7 +16,7 @@ IV.
 
 2. git commit -v
 
-3. commit_name and key_phrase (in my ex. = trigger-update) in Commit Naming only now! (first raw)
+3. commit_name and key_phrase (in my ex. = trigger-update) in Commit Title only now! (first raw)
 
 4. enjoy
 
