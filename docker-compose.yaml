@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  slackbot:
+    container_name: slackbot
+    environment:
+      - BOT_NAME=${BOT_NAME:-jenkins_trigger_bot)
+      - JENKINS_URL=${JENKINS_URL:-'http://jenkins-tpi.bud.mirantis.net:8080'}
+      - JOB_TOKEN=${JENKINS_URL:?}
+      - READ_WEBSOCKET_DELAY=10
+    build: app/
+    volumes:
+      - ./app:/usr/src/app/
+      - ./app:/usr/src/app
+    command: python /usr/src/app/app.py
