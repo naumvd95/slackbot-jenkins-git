@@ -24,7 +24,7 @@ IV.
 
 1. get into chat
 
-2. @bot_name command (in my ex. = update)
+2. @bot_name command (in my ex. = @jenkins_trigger_bot update)
 
 3. enjoy
 
