@@ -1,8 +1,15 @@
 # slackbot-jenkins-git
-first of all https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
+I. first of all https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
 
-then     
+II. confgure integration slack-github
 
+https://miracloud.slack.com/apps/new/A0F7YS2SX-github
+
+III. configure curl-query to jenkins job, using token
+
+https://sonnguyen.ws/how-to-trigger-a-jenkins-build-from-slack/
+
+IV. 
 #auto-case
 
 1. git add .
