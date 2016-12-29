@@ -28,3 +28,19 @@ IV.
 
 3. enjoy
 
+#docker-case
+
+1. create own auth.env file with following vars
+
+#SLACK_BOT_TOKEN=*********
+#BOT_NAME=****************
+#JENKINS_URL=*************
+#JOB_TOKEN=***************
+
+2. install docker-compose
+
+3. run docker-compose up --build
+
+4. use manual/auto cases
+
+5. enjoy
